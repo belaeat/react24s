@@ -4,51 +4,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <title>Cars</title>
   </head>
   <body>
-    <header>
+    <!-- Search thing will happen here -->
+    <header class="searchEngine">
       <h1>Cars database</h1>
-      <form id="searchCar">
-        <h2>Search</h2>
-        <label for="search">License</label>
-        <input type="text" id="search" />
-        <button type="submit">submit</button>
+      <form id="searchCar" class="searchForm">
+        <h2 class="search">Search</h2>
+        <div class="searchDiv">
+          <label for="search">License</label>
+          <input type="text" id="search"/>
+        </div>
+        <button type="submit" class="btn mt-top">Search</button>
       </form>
-      <p id="searchResult">No car found</p>
+      <p id="searchResult" class="mt-top"></p>
     </header>
     <main>
-      <h2>Add car</h2>
-      <form id="addCar">
-        <div>
-          <label for="license">License</label>
-          <input type="text" id="license" />
-        </div>
-        <div>
-          <label for="maker">Maker</label>
-          <input type="text" id="maker" />
-        </div>
-        <div>
-          <label for="model">Model</label>
-          <input type="text" id="model" />
-        </div>
-        <div>
-          <label for="owner">Owner</label>
-          <input type="text" id="owner" />
-        </div>
-        <div>
-          <label for="price">Price</label>
-          <input type="number" id="price" />
-        </div>
-        <div>
-          <label for="color">Color</label>
-          <input type="color" id="color" />
-        </div>
-        <button type="submit">Submit 🥪</button>
-        <button type="reset">Reset the form</button>
-      </form>
-      <table id="carsTable">
-        <tr>
+      <!-- Cars will be added in this table here -->
+      <table id="carsTable" class="mt-bottom mt-top">
+        <tr class="carsData">
           <th>License</th>
           <th>Maker</th>
           <th>Model</th>
@@ -57,7 +39,42 @@
           <th>Color</th>
         </tr>
       </table>
+      <!-- Form to add car -->
+      <section class="addCarSection">
+        <h2>Add car</h2>
+        <form id="addCar">
+        <div class="formDiv">
+          <label for="license">License</label>
+          <input type="text" id="license" />
+        </div>
+        <div class="formDiv">
+          <label for="maker">Maker</label>
+          <input type="text" id="maker" />
+        </div>
+        <div class="formDiv">
+          <label for="model">Model</label>
+          <input type="text" id="model" />
+        </div>
+        <div class="formDiv">
+          <label for="owner">Owner</label>
+          <input type="text" id="owner" />
+        </div class="formDiv">
+        <div class="formDiv">
+          <label for="price">Price</label>
+          <input type="number" id="price" />
+        </div>
+        <div class="formDiv">
+          <label for="color">Color</label>
+          <input type="color" id="color" />
+        </div class="formDiv">
+        <div class="mt-top">
+          <button type="submit" class="btn">Add</button>
+          <button type="reset" class="btn">Reset the form</button>
+        </div>
+        </form>
+      </section>
     </main>
+    <!-- Footer here -->
     <footer>Copyright &copy REACT24S</footer>
     <script src="main.js"></script>
   </body>

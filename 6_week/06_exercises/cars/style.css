@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  background: #f2e7dc;
+  font-family: "Raleway", sans-serif;
+}
+
+body {
+  margin: 50px;
+}
+
+.mt-top {
+  margin-top: 10px;
+}
+
+.mt-bottom {
+  margin-bottom: 10px;
+}
+
+.searchEngine {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.searchDiv {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+}
+.search {
+  margin-bottom: 10px;
+}
+
+#searchResult {
+  display: none;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: #fff;
+  background: #0d0d0d;
+}
+
+#search {
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.addCarSection {
+  margin-top: 50px;
+}
+
+/* #carsTable {
+  display: none;
+} */
+
+.carsData {
+  display: flex;
+  justify-content: space-between;
+}
+
+#addCar {
+  width: 50%;
+}
+
+.formDiv {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 50px;
+}

@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 // Task 1: Basic Try-Catch Usage
 /*
@@ -15,11 +15,14 @@ Hint: You will need to use `console.error()` to log the error details.
 */
 
 function task1() {
-  // Simulate error
-  throw new Error('Oops, something went wrong!');
+  try {
+    throw new Error("Oops, something went wrong!");
+  } catch (error) {
+    console.error("An error occurred:", error.message);
+  }
 }
 
-
+task1();
 
 // Task 2: Catching ReferenceError
 /*
@@ -34,10 +37,17 @@ Expected behavior:
 */
 
 function task2() {
-  // Code here
+  try {
+    console.log(variablNotDefined);
+  } catch (error) {
+    if (error instanceof ReferenceError) {
+      console.log("Reference Error:", error.message);
+    } else {
+      console.log("Unexpected Error:", error.message);
+    }
+  }
 }
-
-
+task2();
 
 // Task 3: Using Finally
 /*
@@ -52,9 +62,15 @@ Expected behavior:
 */
 
 function task3() {
-  // Code here
+  try {
+    throw new Error("Something is not working, call the police!!!!");
+  } catch (error) {
+    console.error("An error occurred:", error.message);
+  } finally {
+    console.log("Code execution done! :)");
+  }
 }
-
+task3();
 
 // Task 4: Nested Try-Catch
 /*
@@ -72,10 +88,20 @@ Hint: Nest the second try-catch block inside the first try block.
 */
 
 function task4() {
-  // Code here
+  try {
+    console.log("Outer try block.");
+    try {
+      throw new Error("You are wrong again! Try again!");
+    } catch (innerError) {
+      console.error("Caught inner error:", innerError.message);
+    }
+  } catch (outerError) {
+    console.log("Caught in outer", outerError.message);
+  } finally {
+    console.log("Code executed successfully.");
+  }
 }
-
-
+task4();
 
 // Task 5: Function with Try-Catch
 /*
@@ -91,8 +117,19 @@ Expected behavior:
 */
 
 function task5(array, index) {
-  // Code here
+  try {
+    if (index < 0 || index >= array.length) {
+      throw new RangeError("Index out of bounds");
+    }
+    return array[index];
+  } catch (error) {
+    console.error("Error again:", error.message);
+  } finally {
+    console.log("Task 5 completed!!");
+  }
 }
+console.log(task5([1, 2, 4], 1));
+console.log(task5([1, 2, 4], 5)); // this give an error of index out of bounds!
 
 // Task 6: Catching TypeError
 /*
@@ -107,9 +144,21 @@ Expected behavior:
 */
 
 function task6(obj, key) {
-  // Code here
+  try {
+    console.log(obj[key]); // this is how we read specific value! obj[key]
+  } catch (error) {
+    if (error instanceof TypeError) {
+      console.error("TypeError caught:", error.message);
+    } else {
+      console.error("Enexpected error occurred:", error.message);
+    }
+  } finally {
+    console.log("Task 6 completed!");
+  }
 }
 
+task6({ firstName: "Belaeat" }, "firstName");
+task6(null, "firstName");
 
 // Task 7: Handling JSON Parsing Error
 /*
@@ -126,9 +175,14 @@ Hint: Use `JSON.parse()` to attempt to parse the input string.
 */
 
 function task7(jsonString) {
-  // Code here
+  try {
+    const parsedObj = JSON.parse(jsonString);
+    console.log(parsedObj);
+  } catch (error) {
+    console.error("Invalid JSON format:", error.messsage);
+  }
 }
-
+task7("{}");
 
 // Task 8: Throwing Custom Error
 /*
@@ -146,7 +200,6 @@ function task8(number) {
   // Code here
 }
 
-
 // Task 9: RangeError Example
 /*
 Task: Write a function `task9` that takes a number and attempts to create an array with that number as the length.
@@ -163,7 +216,6 @@ function task9(number) {
   // Code here
 }
 
-
 // Task 10: URIError Handling
 /*
 Task: Use the built-in `decodeURI()` function to decode a malformed URI string.
@@ -178,4 +230,3 @@ Expected behavior:
 function task10(malformedURI) {
   // Code here
 }
-
